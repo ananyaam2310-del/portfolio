@@ -1,7 +1,7 @@
 /* ==========================================================================
    1. Google Fonts Import & Universal Reset
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght=0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght=0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -201,24 +201,27 @@ body {
 .submit-btn:hover {
     background-color: var(--accent-hover);
 }
+
+/* ==========================================================================
+   6. Responsive Design (Mobile Media Queries)
+   ========================================================================== */
 @media (max-width: 768px) {
-    
-    /* 1. Target the container holding your intro and image */
+    /* Target the container holding your intro and image */
     .profile-container { 
         flex-direction: column;   /* Stacks the text and image vertically */
         text-align: center;       /* Centers the text nicely on mobile */
         padding: 20px;            /* Gives it some breathing room from the screen edges */
     }
 
-    /* 2. Make sure your profile image scales down nicely and doesn't overflow */
-    .profile-container img {
+    /* Target your defined profile image class to scale beautifully */
+    .profile-img {
         max-width: 100%;
         height: auto;
         margin-top: 20px;         /* Adds space between the text and the image */
     }
     
-    /* 3. Adjust the main portfolio title container if needed */
-    header, .main-title {
+    /* Adjust the main portfolio title container if needed */
+    .portfolio-header {
         padding: 20px;
     }
 }
