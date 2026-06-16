@@ -19,10 +19,66 @@
     --accent-hover: #5F7D6B;  /* Darker moss */
 }
 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling animation when clicking links */
+}
+
 body {
     background-color: var(--bg-light);
     color: var(--text-main);
     line-height: 1.6;
+}
+
+/* ==========================================================================
+   NEW: Responsive Navigation Bar (Integrated with theme variables)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-header); /* Blends with your header color */
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(44, 74, 62, 0.1);
+}
+
+.nav-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    font-family: 'Space Mono', monospace;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-hover);
+}
+
+/* Hidden by default on desktop computers */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-main);
 }
 
 /* ==========================================================================
@@ -206,6 +262,30 @@ body {
    6. Responsive Design (Mobile Media Queries)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Mobile Navbar Dropdown Configuration */
+    .nav-toggle {
+        display: block; /* Hamburger button icon appears */
+    }
+
+    .nav-menu {
+        display: none; /* Keeps navigation hidden until clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-header);
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(44, 74, 62, 0.08);
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Toggled via JavaScript when user clicks the toggle button */
+    .nav-menu.active {
+        display: flex;
+    }
+
     /* Target the container holding your intro and image */
     .profile-container { 
         flex-direction: column;   /* Stacks the text and image vertically */
