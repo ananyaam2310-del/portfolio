@@ -1,0 +1,224 @@
+/* ==========================================================================
+   1. Google Fonts Import & Universal Reset
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Applies the typewriter style globally across the whole page */
+    font-family: 'Courier Prime', 'Space Mono', Courier, monospace; 
+}
+
+:root {
+    --bg-light: #F1F7ED;      /* Soft Ghibli background tint */
+    --bg-header: #E2ECE9;     /* Soft sage tint */
+    --text-main: #2C4A3E;     /* Deep forest green */
+    --accent-color: #7A9A86;  /* Mossy green */
+    --accent-hover: #5F7D6B;  /* Darker moss */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Header Section
+   ========================================================================== */
+.portfolio-header {
+    background-color: var(--bg-header);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.portfolio-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-header .subtitle {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   3. Profile Section (Split layout)
+   ========================================================================== */
+.profile-section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* Makes it stack neatly on mobile screen sizes */
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.quote {
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.profile-image-box {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(44, 74, 62, 0.15); /* Soft themed shadow */
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   4. About & Skills Section (Perfectly Centered)
+   ========================================================================== */
+.about-section {
+    text-align: center; /* Centers the 'About' and 'Skills' headings */
+    padding: 40px 20px;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-section h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Container block to dynamically push the list to the horizontal center */
+.skills-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 15px;
+}
+
+.skills-list {
+    text-align: left; /* Keeps numbers/text neatly stacked vertically */
+    list-style-position: inside; /* Keeps list numbers inline with the text */
+    display: inline-block;
+    padding: 0;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   5. Contact Section (Perfectly Centered Form & Inputs)
+   ========================================================================== */
+.contact-section {
+    text-align: center; /* Centers the 'Contact' heading */
+    padding: 40px 20px;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto; /* Forces the entire form box to sit directly in the middle */
+    text-align: left; /* Keeps labels and text inputs aligned neatly inside the form boundaries */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stacks the label text above the input box */
+    gap: 8px;
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-family: 'Space Mono', monospace; /* Punchier typewriter accent font */
+}
+
+.form-group input {
+    width: 100%; /* Forces input box to fill up the entire 400px container width */
+    padding: 12px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    background-color: #fff;
+    color: var(--text-main);
+    outline: none;
+    font-family: 'Courier Prime', monospace;
+}
+
+.form-group input:focus {
+    border-color: var(--text-main);
+    box-shadow: 0 0 5px rgba(122, 154, 134, 0.5);
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%; /* Keeps the button matching the width of the input fields */
+    transition: background 0.3s ease;
+    font-family: 'Space Mono', monospace;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+@media (max-width: 768px) {
+    
+    /* 1. Target the container holding your intro and image */
+    .profile-container { 
+        flex-direction: column;   /* Stacks the text and image vertically */
+        text-align: center;       /* Centers the text nicely on mobile */
+        padding: 20px;            /* Gives it some breathing room from the screen edges */
+    }
+
+    /* 2. Make sure your profile image scales down nicely and doesn't overflow */
+    .profile-container img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;         /* Adds space between the text and the image */
+    }
+    
+    /* 3. Adjust the main portfolio title container if needed */
+    header, .main-title {
+        padding: 20px;
+    }
+}
